@@ -21,6 +21,6 @@ public class LightButton : MonoBehaviour
     private void ToggleLEDLight()
     {
         ICommand command = new ToggleLightCommand(targetLED);
-        commandInvoker.ToggleLight(command);
+        commandInvoker.AddCommand(command);
     }
 }

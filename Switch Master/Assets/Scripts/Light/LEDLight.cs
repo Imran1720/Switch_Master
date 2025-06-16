@@ -33,4 +33,11 @@ public class LEDLight : MonoBehaviour
         targetLED.color = isLightOn ? lightOnColor : lightOffColor;
         glowSource.enabled = isLightOn;
     }
+
+    public void switchOffLight()
+    {
+        isLightOn = false;
+        targetLED.color = lightOffColor;
+        glowSource.enabled = false;
+    }
 }

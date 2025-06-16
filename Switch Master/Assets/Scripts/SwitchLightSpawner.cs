@@ -11,11 +11,14 @@ public class SwitchLightSpawner : MonoBehaviour
     [SerializeField] private Color lightOnColor;
     [SerializeField] private Color lightOffColor;
 
+    private LEDLight currentLight;
+
+
     public void SpawnLightAndSwitch(LightCommandInvoker commandInvoker)
     {
         if (commandInvoker != null)
         {
-            LEDLight currentLight = Instantiate(lightPrefab);
+            currentLight = Instantiate(lightPrefab);
             LightButton currentButton = Instantiate(buttonPrefab);
 
             SetParent(currentLight, currentButton);
@@ -28,5 +31,10 @@ public class SwitchLightSpawner : MonoBehaviour
     {
         currentLight.transform.SetParent(transform, false);
         currentButton.transform.SetParent(transform, false);
+    }
+
+    public void SwitchOffLight()
+    {
+        currentLight.switchOffLight();
     }
 }

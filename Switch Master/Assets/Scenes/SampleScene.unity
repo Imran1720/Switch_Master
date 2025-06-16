@@ -161,7 +161,10 @@ MonoBehaviour:
   - {fileID: 1536599677528897048}
   - {fileID: 4287152111283990568}
   - {fileID: 1071368430207646555}
-  UndoButton: {fileID: 1364385046}
+  undoButton: {fileID: 1364385046}
+  redoButton: {fileID: 801088063}
+  replayButton: {fileID: 2137139193}
+  replayActionDelay: 0.5
 --- !u!4 &120390365
 Transform:
   m_ObjectHideFlags: 0

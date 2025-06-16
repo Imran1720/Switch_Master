@@ -1,9 +1,11 @@
 using System.Collections.Generic;
+using UnityEngine;
 
 public class LightCommandInvoker
 {
     Stack<ICommand> lightToggleHistoryForUndo;
     Stack<ICommand> lightToggleHistoryForRedo;
+    Stack<ICommand> replayCommandStack;
 
     public LightCommandInvoker()
     {
@@ -11,7 +13,7 @@ public class LightCommandInvoker
         lightToggleHistoryForRedo = new Stack<ICommand>();
     }
 
-    public void ToggleLight(ICommand command)
+    public void AddCommand(ICommand command)
     {
         command.Execute();
         lightToggleHistoryForUndo.Push(command);
@@ -36,9 +38,17 @@ public class LightCommandInvoker
         }
     }
 
-    public void Replay()
+    public void SetUpReplayData()
     {
-
-
+        replayCommandStack = new Stack<ICommand>(lightToggleHistoryForUndo);
     }
+
+    public void Reset()
+    {
+        lightToggleHistoryForUndo.Clear();
+        lightToggleHistoryForRedo.Clear();
+        replayCommandStack.Clear();
+    }
+
+    public Stack<ICommand> GetReplayAction() => replayCommandStack;
 }
