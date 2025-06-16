@@ -12,15 +12,18 @@ public class LEDLight : MonoBehaviour
     [Header("Light Glow")]
     [SerializeField] private Image glowSource;
 
-    [Header("Light Color")]
-    [SerializeField] private Color lightOnColor;
-    [SerializeField] private Color lightOffColor;
+
+    private Color lightOnColor;
+    private Color lightOffColor;
 
     private bool isLightOn;
-    private void Start()
+    public void InitializeData(Color onColor, Color offColor)
     {
         isLightOn = true;
+        lightOnColor = onColor;
+        lightOffColor = offColor;
         targetLED.color = lightOnColor;
+        glowSource.color = lightOffColor;
         ToggleLEDLight();
     }
 
