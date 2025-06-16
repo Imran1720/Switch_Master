@@ -23,7 +23,7 @@ public class LEDLight : MonoBehaviour
         lightOnColor = onColor;
         lightOffColor = offColor;
         targetLED.color = lightOnColor;
-        glowSource.color = lightOffColor;
+        glowSource.color = new Color(lightOnColor.r, lightOnColor.g, lightOnColor.b, .2f);
         ToggleLEDLight();
     }
 

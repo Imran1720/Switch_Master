@@ -36,7 +36,11 @@ public class ReplayHandler
         {
             commandInvoker.AddCommand(CommandsToBePlayed.Pop());
             timer = actionDelay;
-            if (CommandsToBePlayed.Count <= 0) isReplaying = false;
+            if (CommandsToBePlayed.Count <= 0)
+            {
+                isReplaying = false;
+                GameService.instance.Reset();
+            }
         }
     }
 
