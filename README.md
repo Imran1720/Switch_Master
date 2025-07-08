@@ -3,7 +3,11 @@
 This game is a simple switch base project where each switch triggers a light. all the execution is stored and used to perform **Undo, Redo and Replay**.
 
 ---
+## Gameplay
 
+https://github.com/user-attachments/assets/e63c3f26-7366-4d3b-a8bb-442a70abf064
+
+---
 ## 🧠 What I Learned
 
 - ✅ Practical implementation of the **Command Pattern** in a game setting.
